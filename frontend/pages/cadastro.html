@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#28496f">
+  <title>Cadastro — Desempenha</title>
+  <link rel="stylesheet" href="cadastro.css">
+</head>
+<body>
+  <main class="auth-shell register-shell">
+    <aside class="brand-panel" aria-label="Desempenha — Avaliação de Alunos">
+      <img class="brand-logo" src="logo.png" alt="Desempenha — Avaliação de Alunos">
+      <p class="brand-description">Uma ferramenta para tornar<br class="desktop-break"> a avaliação mais simples,<br class="desktop-break"> organizada e eficiente.</p>
+    </aside>
+
+    <section class="form-panel">
+      <div class="form-content register-content">
+        <header class="form-heading">
+          <h1>Cadastrar Professor</h1>
+          <p>Informe seus dados concluir cadastro</p>
+        </header>
+
+        <form class="auth-form" action="#" method="get">
+          <label class="input-wrap">
+            <svg class="field-icon user-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7.5" r="4.3"/><path d="M3.5 21c.4-4.4 3.4-7 8.5-7s8.1 2.6 8.5 7z"/></svg>
+            <input type="email" name="email" autocomplete="email" placeholder="E-mail" aria-label="E-mail" required>
+          </label>
+          <label class="input-wrap">
+            <svg class="field-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="6" width="17" height="15" rx="2.2"/><path d="M9 6V4.5a3 3 0 0 1 6 0V6M8 11h8M8 14.5h3M8 18h5M17 14.5h.01"/></svg>
+            <input type="text" name="cpf" inputmode="numeric" autocomplete="username" placeholder="CPF" aria-label="CPF" required>
+          </label>
+          <label class="input-wrap">
+            <svg class="field-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5.5" y="10" width="13" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3M11 14h2"/></svg>
+            <input type="password" name="senha" autocomplete="new-password" placeholder="Senha" aria-label="Senha" required>
+          </label>
+          <button class="primary-button" type="submit">Cadastrar</button>
+        </form>
+
+        <nav class="form-links register-links" aria-label="Opções de acesso">
+          <p><a href="login.html">Já tem conta?</a> <span>Entrar</span></p>
+        </nav>
+
+        <p class="access-note">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5.5" y="10" width="13" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3M11 14h2"/></svg>
+          Acesso exclusivo para professores
+        </p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

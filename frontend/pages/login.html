@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#28496f">
+  <title>Entrar — Desempenha</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <main class="auth-shell">
+    <aside class="brand-panel" aria-label="Desempenha — Avaliação de Alunos">
+      <img class="brand-logo" src="logo.png" alt="Desempenha — Avaliação de Alunos">
+      <p class="brand-description">Uma ferramenta para tornar<br class="desktop-break"> a avaliação mais simples,<br class="desktop-break"> organizada e eficiente.</p>
+    </aside>
+
+    <section class="form-panel">
+      <div class="form-content login-content">
+        <header class="form-heading">
+          <h1>Acesso do Professor</h1>
+          <p>Entre com suas credenciais para continuar.</p>
+        </header>
+
+        <form class="auth-form" action="#" method="get">
+          <label class="input-wrap">
+            <svg class="field-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="6" width="17" height="15" rx="2.2"/><path d="M9 6V4.5a3 3 0 0 1 6 0V6M8 11h8M8 14.5h3M8 18h5M17 14.5h.01"/></svg>
+            <input type="text" name="cpf" inputmode="numeric" autocomplete="username" placeholder="CPF" aria-label="CPF" required>
+          </label>
+          <label class="input-wrap">
+            <svg class="field-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5.5" y="10" width="13" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3M11 14h2"/></svg>
+            <input type="password" name="senha" autocomplete="current-password" placeholder="Senha" aria-label="Senha" required>
+          </label>
+          <button class="primary-button" type="submit">Entrar</button>
+        </form>
+
+        <nav class="form-links" aria-label="Opções de acesso">
+          <a class="forgot-link" href="#">Esqueceu a senha?</a>
+          <p><a href="cadastro.html">Não tem conta?</a> <span>Cadastre-se</span></p>
+        </nav>
+
+        <p class="access-note">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5.5" y="10" width="13" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3M11 14h2"/></svg>
+          Acesso exclusivo para professores
+        </p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
