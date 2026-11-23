@@ -1,0 +1,23 @@
+
+# Dependências
+node_modules/
+
+# Variáveis de ambiente e senhas
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos temporários
+tmp/
+temp/
+
+# Backups e dados locais
+*.bak
