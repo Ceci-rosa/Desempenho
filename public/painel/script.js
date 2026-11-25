@@ -15,44 +15,36 @@ document.addEventListener('DOMContentLoaded', () => {
     const partes = usuario.nome.trim().split(/\s+/);
     const iniciais = (partes[0][0] + (partes.length > 1 ? partes[partes.length - 1][0] : '')).toUpperCase();
 
-    document.getElementById('boas-vindas').textContent = `Olá, Prof. ${usuario.nome}!`;
-    document.getElementById('nome-usuario').textContent = usuario.nome;
-    document.getElementById('avatar').textContent = iniciais;
-});
+    // Só preenche o que existir na página
+    const boasVindas = document.getElementById('boas-vindas');
+    const nomeUsuario = document.getElementById('nome-usuario');
+    const avatar = document.getElementById('avatar');
 
-// FUNCIONALIDADE DO MENU LATERAL
+    if (boasVindas) boasVindas.textContent = `Olá, Prof. ${usuario.nome}!`;
+    if (nomeUsuario) nomeUsuario.textContent = usuario.nome;
+    if (avatar) avatar.textContent = iniciais;
 
-const menuToggle = document.getElementById('menu-toggle');
-const dashboardShell = document.querySelector('.dashboard-shell');
+    // Menu lateral
+    const menuToggle = document.getElementById('menu-toggle');
+    const dashboardShell = document.querySelector('.dashboard-shell');
 
-if (menuToggle && dashboardShell) {
+    if (menuToggle && dashboardShell) {
+        const atualizarEstadoMenu = () => {
+            const mobile = window.matchMedia('(max-width: 600px)').matches;
+            const aberto = mobile
+                ? dashboardShell.classList.contains('sidebar-expanded')
+                : !dashboardShell.classList.contains('sidebar-collapsed');
 
-    menuToggle.addEventListener('click', () => {
+            menuToggle.setAttribute('aria-expanded', aberto);
+            menuToggle.setAttribute('aria-label', aberto ? 'Recolher menu' : 'Expandir menu');
+        };
 
-        const mobile = window.matchMedia('(max-width: 600px)').matches;
-
-        if (mobile) {
-            // Em celulares, expande ou recolhe o menu
-            dashboardShell.classList.toggle('sidebar-expanded');
-        } else {
-            // Em computadores, recolhe ou expande o menu
-            dashboardShell.classList.toggle('sidebar-collapsed');
-        }
+        menuToggle.addEventListener('click', () => {
+            const mobile = window.matchMedia('(max-width: 600px)').matches;
+            dashboardShell.classList.toggle(mobile ? 'sidebar-expanded' : 'sidebar-collapsed');
+            atualizarEstadoMenu();
+        });
 
         atualizarEstadoMenu();
-    });
-
-    function atualizarEstadoMenu() {
-        const mobile = window.matchMedia('(max-width: 600px)').matches;
-
-        const aberto = mobile
-            ? dashboardShell.classList.contains('sidebar-expanded')
-            : !dashboardShell.classList.contains('sidebar-collapsed');
-
-        menuToggle.setAttribute('aria-expanded', aberto);
-        menuToggle.setAttribute(
-            'aria-label',
-            aberto ? 'Recolher menu' : 'Expandir menu'
-        );
     }
-}
+});

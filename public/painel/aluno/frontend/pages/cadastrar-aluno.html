@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Aluno — Desempenha</title>
+  <link rel="stylesheet" href="../assests/css/pages/cadastrar-aluno.css">
+</head>
+
+<body class="dashboard-page">
+  <!-- Ícones usados no menu e no formulário -->
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <symbol id="inicio" viewBox="0 0 24 24">
+        <path d="m2 11 10-9 10 9M5 9v12h5v-7h4v7h5V9"/>
+      </symbol>
+      <symbol id="pessoa" viewBox="0 0 24 24">
+        <circle cx="12" cy="7" r="4"/>
+        <path d="M4 21a8 8 0 0 1 16 0z"/>
+      </symbol>
+      <symbol id="turmas" viewBox="0 0 24 24">
+        <circle cx="12" cy="8" r="3"/>
+        <circle cx="5" cy="9" r="2"/>
+        <circle cx="19" cy="9" r="2"/>
+        <path d="M6 20a6 6 0 0 1 12 0zM2 18a4 4 0 0 1 4-5m16 5a4 4 0 0 0-4-5"/>
+      </symbol>
+      <symbol id="cursos" viewBox="0 0 24 24">
+        <rect x="2" y="3" width="20" height="15" rx="1"/>
+        <path d="M8 22h8m-4-4v4M5 9l7-3 7 3-7 3z"/>
+      </symbol>
+      <symbol id="avaliacoes" viewBox="0 0 24 24">
+        <path d="m12 2 2.9 6.2 6.8 1-4.9 4.8 1.2 6.8-6-3.2-6 3.2 1.2-6.8-4.9-4.8 6.8-1z"/>
+      </symbol>
+      <symbol id="resultados" viewBox="0 0 24 24">
+        <path d="M2 21h20M4 18v-5h3v5m3 0V9h3v9m3 0V5h3v13M3 9l6-5 4 2 7-5"/>
+      </symbol>
+      <symbol id="recompensas" viewBox="0 0 24 24">
+        <circle cx="12" cy="9" r="7"/>
+        <path d="m8 15-2 7 6-3 6 3-2-7m-7-6 2 2 4-4"/>
+      </symbol>
+      <symbol id="relatorios" viewBox="0 0 24 24">
+        <rect x="4" y="3" width="16" height="19" rx="2"/>
+        <path d="M8 8h8M8 12h8m-8 4h5"/>
+      </symbol>
+      <symbol id="configuracoes" viewBox="0 0 24 24">
+        <path d="m9 3 1-2h4l1 2 2 1 2-.3 2 3-1 2v3l1 2-2 3-2-.3-2 1-1 3h-4l-1-3-2-1-2 .3-2-3 1-2V9L3 7l2-3 2 .3z"/>
+        <circle cx="12" cy="11" r="3"/>
+      </symbol>
+      <symbol id="sino" viewBox="0 0 24 24">
+        <path d="M4 18h16l-2-3v-5a6 6 0 0 0-12 0v5zm6 3h4"/>
+      </symbol>
+      <symbol id="codigo" viewBox="0 0 24 24">
+        <rect x="2" y="5" width="20" height="15" rx="3"/>
+        <path d="M2 10h20M6 15h5"/>
+      </symbol>
+      <symbol id="email" viewBox="0 0 24 24">
+        <rect x="2" y="4" width="20" height="16" rx="3"/>
+        <path d="m3 6 9 7 9-7"/>
+      </symbol>
+      <symbol id="telefone" viewBox="0 0 24 24">
+        <path d="m5 3 4 1 1 5-3 2a15 15 0 0 0 6 6l3-3 5 2v4C13 25-4 9 5 3z"/>
+      </symbol>
+      <symbol id="calendario" viewBox="0 0 24 24">
+        <rect x="3" y="5" width="18" height="16" rx="2"/>
+        <path d="M7 2v6m10-6v6M3 11h18"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <div class="dashboard-shell">
+    <aside class="dashboard-sidebar">
+      <a class="sidebar-brand" href="painelprincipal.html" aria-label="Desempenha — Início">
+        <img src="../assests/images/logo.png" alt="Desempenha">
+      </a>
+
+      <nav class="dashboard-nav" aria-label="Navegação principal">
+        <a class="nav-item" href="painelprincipal.html">
+          <svg aria-hidden="true"><use href="#inicio"/></svg> Início
+        </a>
+        <a class="nav-item active" href="alunos.html" aria-current="location">
+          <svg aria-hidden="true"><use href="#pessoa"/></svg> Alunos
+        </a>
+        <a class="nav-item" href="turmas-cursos.html">
+          <svg aria-hidden="true"><use href="#turmas"/></svg> Turmas
+        </a>
+        <a class="nav-item" href="turmas-cursos.html">
+          <svg aria-hidden="true"><use href="#cursos"/></svg> Cursos
+        </a>
+        <a class="nav-item" href="avaliacoes.html">
+          <svg aria-hidden="true"><use href="#avaliacoes"/></svg> Avaliações
+        </a>
+        <a class="nav-item" href="resultados.html">
+          <svg aria-hidden="true"><use href="#resultados"/></svg> Resultados
+        </a>
+        <a class="nav-item" href="recompensas.html">
+          <svg aria-hidden="true"><use href="#recompensas"/></svg> Recompensas
+        </a>
+        <a class="nav-item" href="relatorios.html">
+          <svg aria-hidden="true"><use href="#relatorios"/></svg> Relatórios
+        </a>
+        <a class="nav-item" href="configuracoes.html">
+          <svg aria-hidden="true"><use href="#configuracoes"/></svg> Configurações
+        </a>
+      </nav>
+    </aside>
+
+    <main class="dashboard-main">
+      <header class="dashboard-topbar">
+        <div class="menu-toggle" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="profile-area">
+          <span class="notification-button" aria-label="Notificações">
+            <svg aria-hidden="true"><use href="#sino"/></svg>
+          </span>
+          <div class="profile-button">
+            <span class="avatar">VD</span>
+            <span class="profile-name">
+              <strong>Vinícius Dantas</strong>
+              <small>Professor</small>
+            </span>
+            <svg class="chevron" viewBox="0 0 12 12" aria-hidden="true">
+              <path d="m2 4 4 4 4-4"/>
+            </svg>
+          </div>
+        </div>
+      </header>
+
+      <section class="cadastro" aria-labelledby="titulo-cadastro">
+        <header class="cadastro-titulo">
+          <svg viewBox="0 0 40 52" aria-hidden="true">
+            <circle cx="20" cy="13" r="12"/>
+            <path d="M1 50a19 21 0 0 1 38 0z"/>
+          </svg>
+          <div>
+            <h1 id="titulo-cadastro">Cadastro de Aluno</h1>
+            <p>Adicione um novo aluno à turma</p>
+          </div>
+        </header>
+
+        <form class="cadastro-form" method="post">
+          <div class="campos">
+            <label class="campo">
+              <span>Turma *</span>
+              <select name="turma" required>
+                <option value="" selected disabled>Selecione uma turma</option>
+                <option value="A">Turma A</option>
+                <option value="B">Turma B</option>
+              </select>
+            </label>
+
+            <label class="campo campo-nome">
+              <span>Nome Completo *</span>
+              <span class="entrada">
+                <svg aria-hidden="true"><use href="#pessoa"/></svg>
+                <input type="text" name="nome" autocomplete="name"
+                       placeholder="Digite o nome do aluno" required>
+              </span>
+            </label>
+
+            <label class="campo">
+              <span>Código do aluno *</span>
+              <span class="entrada">
+                <svg aria-hidden="true"><use href="#codigo"/></svg>
+                <input type="text" name="codigo" placeholder="Ex: A001" required>
+              </span>
+            </label>
+
+            <label class="campo">
+              <span>Matrícula</span>
+              <span class="entrada">
+                <svg aria-hidden="true"><use href="#codigo"/></svg>
+                <input type="text" name="matricula" placeholder="Ex: A001">
+              </span>
+            </label>
+
+            <label class="campo">
+              <span>E-mail</span>
+              <span class="entrada">
+                <svg aria-hidden="true"><use href="#email"/></svg>
+                <input type="email" name="email" autocomplete="email"
+                       placeholder="aluno@gmail.com">
+              </span>
+            </label>
+
+            <label class="campo">
+              <span>Telefone</span>
+              <span class="entrada">
+                <svg aria-hidden="true"><use href="#telefone"/></svg>
+                <input type="tel" name="telefone" autocomplete="tel"
+                       placeholder="(00) 00000-0000">
+              </span>
+            </label>
+
+            <label class="campo">
+              <span>Data de Nascimento</span>
+              <span class="entrada">
+                <svg aria-hidden="true"><use href="#calendario"/></svg>
+                <input type="date" name="nascimento" autocomplete="bday">
+              </span>
+            </label>
+          </div>
+
+          <div class="acoes">
+            <a class="botao cancelar" href="alunos.html">Cancelar</a>
+            <button class="botao cadastrar" type="submit">
+              <span aria-hidden="true">+</span> Cadastrar
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

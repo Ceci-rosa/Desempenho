@@ -1,0 +1,234 @@
+@import url("alunos.css");
+
+.icon-library {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.cadastro {
+  padding: 0 3% 32px 2.2%;
+  color: #405f84;
+}
+
+.cadastro-titulo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 4% 30px;
+}
+
+.cadastro-titulo svg {
+  width: 50px;
+  height: 65px;
+  flex-shrink: 0;
+  fill: currentColor;
+}
+
+.cadastro-titulo h1 {
+  margin: 0;
+  font-size: 21px;
+}
+
+.cadastro-titulo p {
+  margin: 5px 0 0;
+  font-size: 14px;
+}
+
+.cadastro-form {
+  padding: 24px 5.5% 28px 3.3%;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 3px 3px #0003;
+}
+
+/* O nome ocupa toda a segunda coluna, como no protótipo. */
+.campos {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.48fr);
+  column-gap: 6.5%;
+  row-gap: clamp(26px, 5.6vh, 50px);
+}
+
+.campo {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  min-width: 0;
+  font-size: 18px;
+  font-weight: 650;
+}
+
+.campo:nth-child(even):not(.campo-nome) {
+  width: 67.6%;
+}
+
+.entrada {
+  position: relative;
+  display: block;
+}
+
+.entrada svg {
+  position: absolute;
+  top: 50%;
+  left: 8px;
+  width: 17px;
+  height: 17px;
+  transform: translateY(-50%);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+
+.campo input,
+.campo select {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: 34px;
+  padding: 0 8px;
+  border: 1px solid #aabbd0;
+  border-radius: 7px;
+  background: #fff;
+  color: #405f84;
+  box-shadow: 0 2px 3px #0003;
+  font: 14px "Segoe UI", Arial, sans-serif;
+}
+
+.campo input {
+  padding-left: 30px;
+}
+
+.campo input::placeholder,
+.campo select:invalid {
+  color: #647d9c;
+}
+
+.campo input:focus-visible,
+.campo select:focus-visible,
+.botao:focus-visible {
+  outline: 2px solid #407cff;
+  outline-offset: 2px;
+}
+
+.acoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 126px;
+  min-height: 46px;
+  padding: 8px 14px;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 3px #0003;
+  font: 650 16px "Segoe UI", Arial, sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.cancelar {
+  color: #3878fa;
+  background: #fff;
+}
+
+.cadastrar {
+  color: #fff;
+  background: #407cff;
+}
+
+.cadastrar span {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.cancelar:hover {
+  background: #f3f7ff;
+}
+
+.cadastrar:hover {
+  background: #306bea;
+}
+
+@media (max-width: 800px) {
+  .dashboard-sidebar {
+    min-width: 160px;
+  }
+
+  .campo:nth-child(even):not(.campo-nome) {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard-shell {
+    display: block;
+  }
+
+  .dashboard-sidebar {
+    width: 100%;
+    max-width: none;
+    padding: 12px;
+  }
+
+  .sidebar-brand {
+    width: 100px;
+    margin: 0 0 10px;
+  }
+
+  .dashboard-nav {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .nav-item {
+    flex-shrink: 0;
+  }
+
+  .cadastro {
+    padding: 0 12px 24px;
+  }
+
+  .cadastro-titulo {
+    gap: 14px;
+    padding: 20px 4px;
+  }
+
+  .cadastro-titulo svg {
+    width: 38px;
+    height: 50px;
+  }
+
+  .cadastro-form {
+    padding: 20px 16px;
+  }
+
+  .campos {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .campo {
+    font-size: 16px;
+  }
+
+  .acoes {
+    gap: 12px;
+  }
+
+  .botao {
+    flex: 1;
+    min-width: 0;
+  }
+}
