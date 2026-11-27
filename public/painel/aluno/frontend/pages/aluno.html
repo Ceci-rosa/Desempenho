@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="#28496f" name="theme-color" />
+    <title>Alunos — Desempenha</title>
+    <link href="alunos.css" rel="stylesheet" />
+
+
+</head>
+
+<body class="dashboard-page">
+    <main class="dashboard-shell">
+        <aside class="dashboard-sidebar">
+            <a aria-label="Desempenha — Início" class="sidebar-brand" href="/painel/painel.html">
+                <img alt="Desempenha — Avaliação de Alunos" src="logo.png" />
+            </a>
+            <nav aria-label="Navegação principal" class="dashboard-nav">
+                <a class="nav-item" href="/painel/painel.html"><svg aria-hidden="true" viewbox="0 0 24 24">
+                        <path d="m3 11 9-8 9 8M5.5 9.5V21h13V9.5M9 21v-7h6v7"></path>
+                    </svg><span>Início</span></a>
+                <a class="nav-item active" href="/painel/aluno/frontend/pages/aluno.html"><svg aria-hidden="true" viewbox="0 0 24 24">
+                        <circle cx="12" cy="7" r="4"></circle>
+                        <path d="M4 21c.4-4.6 3.2-7 8-7s7.6 2.4 8 7z"></path>
+                    </svg><span>Alunos</span></a>
+                <a class="nav-item" href="/painel/turma/turma.html"><svg aria-hidden="true" viewbox="0 0 24 24">
+                        <circle cx="9" cy="8" r="3"></circle>
+                        <circle cx="17" cy="9" r="2.5"></circle>
+                        <circle cx="3.5" cy="10" r="2"></circle>
+                        <path d="M2 19c.2-3.3 2.4-5.2 6-5.2s5.8 1.9 6 5.2zM14 14.5c4.7-.8 7.5 1.1 8 4.5h-6"></path>
+                    </svg><span>Turmas</span></a>
+                <a class="nav-item" href="painel/avaliacoes/avaliacao.html"><svg aria-hidden="true" viewbox="0 0 24 24">
+                        <rect height="18" rx="1.5" width="14" x="5" y="4.5"></rect>
+                        <path d="M9 4.5V3h6v1.5M8 9h8M8 12.5h8M8 16h3l1.5 1.5L16 14"></path>
+                    </svg><span>Avaliações</span></a>
+                <a class="nav-item" href="/painel/resultado.html"><svg aria-hidden="true" viewbox="0 0 24 24">
+                        <rect height="16" rx="1" width="16" x="4" y="4"></rect>
+                        <path d="M8 8h8M8 12h2m2 0h4m-8 4h8M8 2v4m8-4v4M2 8h4m12 0h4M2 16h4m12 0h4"></path>
+                    </svg><span>Resultados</span></a>
+                <a class="nav-item" href="/painel/recompensa.html"><svg aria-hidden="true" viewbox="0 0 24 24">
+                        <path
+                            d="M12 4c-2.5-3.2-7-1.1-5.3 2.2C8 8.6 12 9 12 9s4-.4 5.3-2.8C19 2.9 14.5.8 12 4zM12 9v12m-7 0h14M7 11l5 4 5-4M5 18l7-3 7 3">
+                        </path>
+                    </svg><span>Recompensas</span></a>
+                <a class="nav-item" href="../pages/relatorios.html"><svg aria-hidden="true" viewbox="0 0 24 24">
+                        <rect height="13" rx="1" width="15" x="3" y="4"></rect>
+                        <path d="M6 8h9M6 11h5M6 14h7m-8 6h13l-2-3M18 8h3v12h-5M8 2v4m5-4v4"></path>
+                    </svg><span>Relatórios</span></a>
+                <a class="nav-item" href="../pages/configuracoes.html"><svg aria-hidden="true" viewbox="0 0 24 24">
+                        <circle cx="12" cy="8" r="2"></circle>
+                        <circle cx="6" cy="13" r="2"></circle>
+                        <circle cx="18" cy="13" r="2"></circle>
+                        <path d="M12 10v3m-4.5 1.5L10 17m6.5-2.5L14 17M8 21l4-4 4 4M12 3v3M4 8l3 2m13-2-3 2"></path>
+                    </svg><span>Configurações</span></a>
+            </nav>
+        </aside>
+        <section class="dashboard-main" id="alunos">
+            <header class="dashboard-topbar">
+                <button aria-label="Menu" class="menu-toggle" id="menuToggle"
+                    type="button"><span></span><span></span><span></span></button>
+                <div class="profile-area">
+                    <button aria-label="Notificações" class="notification-button" type="button"><svg aria-hidden="true"
+                            viewbox="0 0 24 24">
+                            <path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"></path>
+                        </svg></button>
+                    <button aria-label="Perfil de Vinícius Dantas" class="profile-button" type="button">
+                        
+                        <span class="avatar" id="avatar">--</span>
+
+                        <span class="profile-name">
+                        <strong id="nome-usuario"></strong>
+                        <small>Professor</small>
+                        </span>
+                        <svg aria-hidden="true" class="chevron" viewbox="0 0 12 12">
+                            <path d="m2 4 4 4 4-4"></path>
+                        </svg>
+                    </button>
+                </div>
+            </header>
+            <div class="students-content">
+                <div class="toolbar">
+                    <label aria-label="Pesquisar alunos" class="search-box">
+                        <svg aria-hidden="true" viewbox="0 0 24 24">
+                            <circle cx="10.8" cy="10.8" r="6.3"></circle>
+                            <path d="m15.5 15.5 5 5"></path>
+                        </svg>
+                        <input id="searchInput" placeholder="Buscar por nome, código ou matrícula..." type="search" />
+                    </label>
+                    <select aria-label="Filtrar por curso" id="courseFilter">
+                        <option value="">Todos os cursos</option>
+                        <option value="Técnico em DS">Técnico em DS</option>
+                    </select>
+                    <a class="add-button" href="cadastrar-aluno.html">
+                        <span aria-hidden="true">＋</span> Novo Aluno
+                    </a>
+                </div>
+                <div class="table-card">
+                    <div class="table-scroll">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>E-mail</th>
+                                    <th>Telefone</th>
+                                    <th>Curso</th>
+                                    <th>Turma</th>
+                                    <th>Status</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody id="studentRows">
+                                <tr>
+                                    <td>Ana Mikaelly</td>
+                                    <td>ana@gmail</td>
+                                    <td>(87)99999-0001</td>
+                                    <td>Técnico em DS</td>
+                                    <td>Turma A</td>
+                                    <td><span class="status active">Ativo</span></td>
+                                    <td><button aria-label="Editar Ana Mikaelly" class="action-button"
+                                            title="Editar (demonstrativo)" type="button"><svg aria-hidden="true"
+                                                viewbox="0 0 24 24">
+                                                <path d="m4 17-1 4 4-1L20 7l-3-3L4 17ZM14.5 6.5l3 3M3 22h18"></path>
+                                            </svg></button><button aria-label="Detalhes Ana Mikaelly"
+                                            class="action-button" title="Detalhes (demonstrativo)" type="button"><svg
+                                                aria-hidden="true" viewbox="0 0 24 24">
+                                                <circle cx="12" cy="12" r="9"></circle>
+                                                <path d="M12 7v10M7 12h10"></path>
+                                            </svg></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Ana Cecília</td>
+                                    <td>ceci@gmail</td>
+                                    <td>(87)99999-0002</td>
+                                    <td>Técnico em DS</td>
+                                    <td>Turma A</td>
+                                    <td><span class="status active">Ativo</span></td>
+                                    <td><button aria-label="Editar Ana Cecília" class="action-button"
+                                            title="Editar (demonstrativo)" type="button"><svg aria-hidden="true"
+                                                viewbox="0 0 24 24">
+                                                <path d="m4 17-1 4 4-1L20 7l-3-3L4 17ZM14.5 6.5l3 3M3 22h18"></path>
+                                            </svg></button><button aria-label="Detalhes Ana Cecília"
+                                            class="action-button" title="Detalhes (demonstrativo)" type="button"><svg
+                                                aria-hidden="true" viewbox="0 0 24 24">
+                                                <circle cx="12" cy="12" r="9"></circle>
+                                                <path d="M12 7v10M7 12h10"></path>
+                                            </svg></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Maria Marcela</td>
+                                    <td>maria@gmail</td>
+                                    <td>(87)99999-0003</td>
+                                    <td>Técnico em DS</td>
+                                    <td>Turma B</td>
+                                    <td><span class="status active">Ativo</span></td>
+                                    <td><button aria-label="Editar Maria Marcela" class="action-button"
+                                            title="Editar (demonstrativo)" type="button"><svg aria-hidden="true"
+                                                viewbox="0 0 24 24">
+                                                <path d="m4 17-1 4 4-1L20 7l-3-3L4 17ZM14.5 6.5l3 3M3 22h18"></path>
+                                            </svg></button><button aria-label="Detalhes Maria Marcela"
+                                            class="action-button" title="Detalhes (demonstrativo)" type="button"><svg
+                                                aria-hidden="true" viewbox="0 0 24 24">
+                                                <circle cx="12" cy="12" r="9"></circle>
+                                                <path d="M12 7v10M7 12h10"></path>
+                                            </svg></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Clara Rihanna</td>
+                                    <td>clara@gmail</td>
+                                    <td>(87)99999-0004</td>
+                                    <td>Técnico em DS</td>
+                                    <td>Turma B</td>
+                                    <td><span class="status inactive">Inativo</span></td>
+                                    <td><button aria-label="Editar Clara Rihanna" class="action-button"
+                                            title="Editar (demonstrativo)" type="button"><svg aria-hidden="true"
+                                                viewbox="0 0 24 24">
+                                                <path d="m4 17-1 4 4-1L20 7l-3-3L4 17ZM14.5 6.5l3 3M3 22h18"></path>
+                                            </svg></button><button aria-label="Detalhes Clara Rihanna"
+                                            class="action-button" title="Detalhes (demonstrativo)" type="button"><svg
+                                                aria-hidden="true" viewbox="0 0 24 24">
+                                                <circle cx="12" cy="12" r="9"></circle>
+                                                <path d="M12 7v10M7 12h10"></path>
+                                            </svg></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Anna Clara</td>
+                                    <td>anna@gmail</td>
+                                    <td>(87)99999-0005</td>
+                                    <td>Técnico em DS</td>
+                                    <td>Turma C</td>
+                                    <td><span class="status active">Ativo</span></td>
+                                    <td><button aria-label="Editar Anna Clara" class="action-button"
+                                            title="Editar (demonstrativo)" type="button"><svg aria-hidden="true"
+                                                viewbox="0 0 24 24">
+                                                <path d="m4 17-1 4 4-1L20 7l-3-3L4 17ZM14.5 6.5l3 3M3 22h18"></path>
+                                            </svg></button><button aria-label="Detalhes Anna Clara"
+                                            class="action-button" title="Detalhes (demonstrativo)" type="button"><svg
+                                                aria-hidden="true" viewbox="0 0 24 24">
+                                                <circle cx="12" cy="12" r="9"></circle>
+                                                <path d="M12 7v10M7 12h10"></path>
+                                            </svg></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="pagination-card">
+                    <span id="countLabel">Mostrando 5 de 48 alunos</span>
+                    <nav aria-label="Paginação de alunos" id="pagination"><button type="button">‹</button><button
+                            class="selected" type="button">1</button><button type="button">2</button><button
+                            type="button">3</button><button type="button">...</button><button type="button">›</button>
+                    </nav>
+                </div>
+            </div>
+        </section>
+    </main>
+<script src="aluno.js"></script>
+</body>
+</html>
